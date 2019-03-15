@@ -10,6 +10,9 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
-    ball = pygame.image.load(
+    ball = pygame.image.load('ball.bmp')
+    ball_rect = ball.get_rect()
+    
+    ball_rect.x = screen.
     
     pygame.display.flip()
