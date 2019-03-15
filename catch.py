@@ -16,15 +16,12 @@ ball_rect.x = screen_rect.centerx
 
 
 while True: 
-       
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
-                ball_rect.y += 10
-                screen.blit(ball, ball_rect)
+                ball_rect.y += 15
     
-    
-    
+    screen.blit(ball, ball_rect)
     pygame.display.flip()
