@@ -8,6 +8,7 @@ width = 800
 screen = pygame.display.set_mode((length, width))
 screen_rect = screen.get_rect()
 
+
 ball = pygame.image.load('ball.bmp')
 ball_rect = ball.get_rect()
 ball_rect.y = ball_rect.width
