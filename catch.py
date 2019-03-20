@@ -3,6 +3,8 @@ import sys
 from random import randint
 from pygame.sprite import Sprite
 
+pygame.font.init()
+
 width = 1200
 height = 800
 
@@ -35,6 +37,7 @@ ball = Ball(width)
 basket = Basket(screen_rect)
 ball_limit = 3
 balls_available = ball_limit
+balls_left_box = pygame.font.Font(None, 20)
 
 while True: 
     screen.fill((255, 255, 103))
@@ -62,7 +65,7 @@ while True:
     else:
         screen.fill((255, 0, 0))
     
-    
+    balls_left_box((str(balls_available)), screen)
     screen.blit(basket.image, basket.rect)    
     screen.blit(ball.image, ball.rect)
     pygame.display.flip()
