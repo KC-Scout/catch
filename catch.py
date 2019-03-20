@@ -2,6 +2,9 @@ import pygame
 import sys
 from random import randint
 from pygame.sprite import Sprite
+# ~ from pygame import 
+
+pygame.font.init()
 
 width = 1200
 height = 800
