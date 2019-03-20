@@ -33,6 +33,9 @@ def collision(sprite_one, sprite_two):
         
 ball = Ball(width)
 basket = Basket(screen_rect)
+ball_limit = 3
+balls_available = ball_limit
+
 while True: 
     screen.fill((255, 255, 103))
     
@@ -45,10 +48,20 @@ while True:
             if event.key == pygame.K_LEFT:
                 basket.rect.x -= 40
     
-    ball.rect.y += 1
-    if collision(basket, ball) or ball.rect.y >= height:
-        ball.rect.y = 15
-        ball.rect.x = randint(1, width)
+    if balls_available >= 0:
+        ball.rect.y += 1
+        if collision(basket, ball):
+            ball.rect.y = 15
+            ball.rect.x = randint(1, width)
+            
+        if ball.rect.bottom >= screen_rect.bottom:
+            balls_available -= 1
+            ball.rect.y = 15
+            ball.rect.x = randint(1, width)
+            print(balls_available)
+    else:
+        screen.fill((255, 0, 0))
+    
     
     screen.blit(basket.image, basket.rect)    
     screen.blit(ball.image, ball.rect)
